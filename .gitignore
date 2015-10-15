@@ -1,0 +1,10 @@
+# sbt specific
+target/
+
+# IntelliJ specific
+.idea
+.idea_modules/
+
+# persistence
+journal/
+snapshot/
