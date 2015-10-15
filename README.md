@@ -1,7 +1,7 @@
 Akka JSON Serializer 
 ====================
 
-This project demonstrates an akka persistence serializer that uses json strings as the marshaled object format.  The json library used is spray-json.  The purpose of this serializer is for use in a quick prototype app that uses akka-persistence and akka-http, both using the same json protocol.  I realized json performance isn't as good as protobufs but it is great for rapid development and debugging. 
+This project demonstrates an akka persistence serializer that uses json strings as the marshaled object format.  The json library used is [spray-json](https://github.com/spray/spray-json).  The purpose of this serializer is for use in a quick prototype app that uses [akka-persistence](http://doc.akka.io/docs/akka/2.4.0/scala/persistence.html) and [akka-http](http://doc.akka.io/docs/akka-stream-and-http-experimental/1.0/scala/http/index.html), both using the same json protocol.  I realized json performance isn't as good as protobufs but it is great for rapid development and debugging. 
 
 ### Run From Command Line
 
