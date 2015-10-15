@@ -12,11 +12,20 @@ class SprayJsonSerializerSpec
   with DefaultTimeout with ImplicitSender
   with WordSpecLike with Matchers with BeforeAndAfterAll {
 
+  val testRef = system.actorOf(TestContactManager.props)
+
+  override def afterAll() {
+    TestKit.shutdownActorSystem(system)
+  }
+
+  override def beforeAll() {
+    testRef ! DeleteAllEvents
+    expectMsg(AllEventsDeleted)
+  }
+
   "TestContactManager" must {
 
     "persist ContactAdded event" in {
-
-      val testRef = system.actorOf(TestContactManager.props)
 
       testRef ! AddContact("Joe Tester")
 

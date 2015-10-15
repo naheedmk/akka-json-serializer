@@ -67,6 +67,10 @@ class TestContactManager extends PersistentActor {
       persist(cd)(updateState)
       sender ! cd
 
+    case DeleteAllEvents =>
+      deleteMessages(Long.MaxValue)
+      sender ! AllEventsDeleted
+
     case "snap" => saveSnapshot(state)
 
     case "print" => println(state)

@@ -12,6 +12,8 @@ case class AddContact(name: String) extends Command
 
 case class DeleteContact(id: UUID)
 
+case object DeleteAllEvents
+
 case class AddAddressToContact(id: UUID, address: String)
 
 // events
@@ -36,6 +38,8 @@ object ContactDeleted extends SprayJsonReader[ContactDeleted] with TestJsonProto
 case class ContactDeleted(id: UUID) extends SprayJsonWriter with TestJsonProtocol with Event {
   override def toJsValue: JsValue = this.toJson
 }
+
+case object AllEventsDeleted
 
 object AddressAdded extends SprayJsonReader[AddressAdded] with TestJsonProtocol {
 
